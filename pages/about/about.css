@@ -1,0 +1,16 @@
+/* .................. ABOUT ME SECTION .................. */
+
+.about-details{
+    display: flex;
+}
+.details{
+    width: 50%;
+    /*margin: 5px;*/
+}
+h2 span{
+    color: gray;
+    font-size: 0.85em;
+}
+.details p{
+    text-align: justify;
+}
