@@ -1,13 +1,16 @@
 .main-portfolio-container{
-    display: flex;
     width: 100%;
     height: 100%;
+    /*border: #04b4e0 2px solid;*/
 }
-.left-portfolio-container{
-    width: 55%;
-    border: 2px solid blue;
+.main-portfolio-container nav ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    font-weight: bold;
 }
-.right-portfolio-container{
-    width: 45%;
-    border: 2px solid blueviolet;
+.main-portfolio-container nav ul li{
+    cursor: pointer;
+    color: rgba(4, 180, 224, 0.5);
 }
+
