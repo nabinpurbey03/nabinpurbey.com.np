@@ -1,40 +1,25 @@
-function loadAbout() {
-    fetch("pages/about/about.html").then((response) => {
+function pageLoader(path){
+    fetch(path).then((response) => {
         return response.text();
     }).then((data) => {
         document.querySelector(".info-container").innerHTML = data;
     }).catch((err) => {
         console.log("error fetching data")
     });
+}
+function loadAbout() {
+    pageLoader("pages/about/about.html");
 }
 
 function loadResume() {
-    fetch("pages/resume/resume.html").then((response) => {
-        return response.text();
-    }).then((data) => {
-        document.querySelector(".info-container").innerHTML = data;
-    }).catch((err) => {
-        console.log("error fetching data")
-    });
+    pageLoader("pages/resume/resume.html");
 }
 function loadPortfolio() {
-    fetch("pages/portfolio/portfolio.html").then((response) => {
-        return response.text();
-    }).then((data) => {
-        document.querySelector(".info-container").innerHTML = data;
-    }).catch((err) => {
-        console.log("error fetching data")
-    });
+    pageLoader("pages/portfolio/portfolio.html");
 }
 
 function loadContact() {
-    fetch("pages/contact/contact.html").then((response) => {
-        return response.text();
-    }).then((data) => {
-        document.querySelector(".info-container").innerHTML = data;
-    }).catch((err) => {
-        console.log("error fetching data")
-    });
+    pageLoader("pages/contact/contact.html");
 }
 
 function reloadPage(){

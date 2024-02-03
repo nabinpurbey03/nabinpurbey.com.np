@@ -113,7 +113,7 @@ button{
     font-size: 16px;
     cursor: pointer;
     padding: 9px 35px;
-    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 button:hover{
     color: #04b4e0;
@@ -127,7 +127,8 @@ button:hover{
     margin-bottom: 0;
 }
 footer{
-    font-size: 10px;
+    font-size: 12px;
+    margin-top: 120px;
 }
 .related-links{
     display: flex;
@@ -161,23 +162,31 @@ footer{
 .nav-bar{
     position: relative;
     background: white;
-    left: 40px;
+    left: 55px;
     border-radius: 50px;
-    padding: 15px;
+    padding: 8px;
+    /*width: 40px;*/
 }
 .nav-bar ul li{
     list-style-type: none;
     margin: 20px 0;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
 }
-
+.active{
+    border: 3px solid #04b4e0;
+    border-radius: 50%;
+    background-color: rgba(4, 180, 224, 0.5);
+}
 .nav-bar ul li img{
     height: 100%;
     width: 100%;
 }
 .nav-bar ul li:hover{
     cursor: pointer;
+    background-color: rgba(4, 180, 224, 0.5);
+    border-radius: 50%;
 }
 ::-webkit-scrollbar{
     width: 0;
@@ -186,3 +195,43 @@ footer{
 .me{
     color: #04b4e0;
 }
+
+@-webkit-keyframes tracking-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-700px);
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-700px);
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+.tracking-in-expand-fwd {
+    -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation-delay: 2400ms;
+}
+
