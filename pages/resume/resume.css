@@ -1,0 +1,91 @@
+.main-resume-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.left-resume-container{
+    width: 55%;
+}
+.right-resume-container{
+    width: 45%;
+    /*border: 2px solid blueviolet;*/
+    margin-left: 5px;
+    margin-top: 60px;
+}
+.edu-cont{
+    display: flex;
+}
+.year{
+    width: 35%;
+    /*margin: 0 10px;*/
+    margin-right: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.desc{
+    width: 65%;
+}
+p, li{
+    text-align: justify-all;
+    color: grey;
+    font-size: 0.9em;
+}
+li::marker{
+    color: #04b4e0;
+}
+.outer{
+    width: 100%;
+    height: 8px;
+    border: 2px solid #04b4e0;
+    border-radius: 20px;
+    padding: 2px 0;
+}
+.inner{
+    height: 100%;
+    background-color: #04b4e0;
+    border-radius: 20px;
+    margin: 0 0 0 3px;
+}
+.skill-per{
+    display: flex;
+    justify-content: space-between;
+}
+.skill{
+    margin: 20px 0;
+}
+.frontend{
+    width: 90%;
+}
+.web{
+    width: 95%;
+}
+.backend{
+    width: 75%;
+}
+.database{
+    width: 70%;
+}
+.end-user{
+    width: 60%;
+}
+.graphic{
+    width: 90%;
+}
+.java{
+    width: 85%;
+}
+.javaScript{
+    width: 80%;
+}
+.know-desc{
+    background-color: #04b4e0;
+    color: white;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 5px 5px;
+}
+.knowledge{
+    display: flex;
+    flex-wrap: wrap;
+}
