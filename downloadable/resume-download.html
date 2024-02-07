@@ -6,17 +6,17 @@
     <link rel="stylesheet" href="resume-download.css" type="text/css">
 </head>
 <body>
-<form action="">
+<form onsubmit="validation(); return false;">
     <label for="name">Name</label>
-    <input type="email" id="name" placeholder="Firstname and Lastname" required>
+    <input type="text" id="name" placeholder="Firstname Lastname">
     <div id="nameErr"></div>
     <label for="email">Email</label>
-    <input type="email" id="email" placeholder="name@example.com" required>
+    <input type="email" id="email" placeholder="name@example.com">
     <div id="emailErr"></div>
     <label for="reason">Description <span>Why do you need my resume?</span></label>
     <textarea name="" id="reason" cols="30" rows="10" placeholder="Minimum 20 words required..."></textarea>
     <div id="descErr"></div>
-    <input type="submit" onsubmit="validation()" value="Download Now">
+    <input type="submit" value="Download Now">
 </form>
 <script type="text/javascript" src="resume-download.js"></script>
 </body>
