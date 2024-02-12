@@ -14,14 +14,14 @@ document.getElementById("myForm").addEventListener("submit", event => {
     inputError.forEach(val => val.innerText = "");
 
     // Validation
-    if(!name.includes(" ")){
-        nameErr.innerText = "Firstname and Lastname must be filled out"
+    if (!name.includes(" ")) {
+        nameErr.innerText = "Firstname and Lastname must be filled out";
     }
-    if(!email.match(emailRegex)){
+    if (!email.match(emailRegex)) {
         emailErr.innerText = "Please enter valid email address!";
     }
-    if(desc.length <60){
-        descErr.innerText = "Please provide some more details."
+    if (desc.length < 60) {
+        descErr.innerText = "Please provide some more details.";
     }
 });
 
