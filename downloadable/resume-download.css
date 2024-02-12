@@ -21,7 +21,7 @@ form{
     padding: 0 75px;
     border-radius: 25px;
     background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0 3px 7px -3px;
 }
 
 input, textarea{
@@ -34,8 +34,8 @@ input, textarea{
 }
 
 #nameErr, #emailErr, #descErr{
-    color: darkred;
-    font-size: 0.8rem;
+    color: #780000;
+    font-size: 0.9rem;
     margin-left: 16px;
 }
 
