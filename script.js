@@ -4,7 +4,7 @@ function pageLoader(path) {
     }).then((data) => {
         document.querySelector(".info-container").innerHTML = data;
     }).catch((err) => {
-        console.log("error fetching data")
+        console.log("error fetching data");
     });
 }
 

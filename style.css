@@ -58,8 +58,10 @@ body{
     /*background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);*/
     height: 100vh;
     /*background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);*/
-    background-color: rgba(231, 254, 255);
+    /*background-color: rgba(231, 254, 255);*/
+    /*background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);*/
     display: flex;
+    background-image: linear-gradient(to right, #fc00ff 0%, #00dbde 100%);
     justify-content: center;
     align-items: center;
     align-content: center;
