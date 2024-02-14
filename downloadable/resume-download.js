@@ -9,6 +9,7 @@ form.addEventListener("submit", event => {
     let emailErr = document.getElementById("emailErr");
     let descErr = document.getElementById("descErr");
     const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    let validated = true;
 
     //Error message clear if any
     let inputError = document.querySelectorAll("div");
@@ -17,14 +18,29 @@ form.addEventListener("submit", event => {
     // Validation
     if (!name.includes(" ")) {
         nameErr.innerText = "Firstname and Lastname must be filled out";
+        validated = false;
     }
     if (!email.match(emailRegex)) {
         emailErr.innerText = "Please enter valid email address!";
+        validated = false;
     }
-    if (desc.length < 60) {
+    if (desc.length < 5) {
         descErr.innerText = "Please provide some more details.";
+        validated = false;
+    }
+
+    if(validated){
+        form.remove();
+        afterValidation();
     }
 });
 
+function afterValidation(){
+    const body = document.querySelector("body");
+    // let img = document.createElement("img");
+    // img.src = "../assets/images/profile_pic.png";
+    // body.appendChild(img);
+    body.innerHTML = "<div class='done'><img src='../assets/images/done.gif' alt='Done'> <br> <button onclick='window.close()'>OK</button></div>";
+}
 
 

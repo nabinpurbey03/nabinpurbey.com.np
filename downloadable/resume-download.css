@@ -31,7 +31,7 @@ input, textarea{
     font-family: "Times New Roman", serif;
     word-spacing: 0.3em;
     font-size: 1.1em;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 }
 
 #nameErr, #emailErr, #descErr{
@@ -56,7 +56,7 @@ span{
     font-style: italic;
 }
 
-input[type="submit"]{
+input[type="submit"], button{
     /*margin-left: 25%;*/
     width: 50%;
     margin: 25px 0 25px 25%;
@@ -71,8 +71,13 @@ input[type="submit"]{
     box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover, button:hover{
     color: #04b4e0;
     background: white;
     transition: 250ms ease;
+}
+
+.done{
+    display: flex;
+    flex-direction: column;
 }
