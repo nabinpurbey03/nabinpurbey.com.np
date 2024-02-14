@@ -1,4 +1,5 @@
-document.getElementById("myForm").addEventListener("submit", event => {
+const form = document.getElementById("myForm");
+form.addEventListener("submit", event => {
     event.preventDefault();
     // Form input initialization
     const name = document.getElementById("name").value;
