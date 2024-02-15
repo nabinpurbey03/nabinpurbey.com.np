@@ -110,15 +110,23 @@ body{
 }
 
 .image-container{
-    border: 3px solid white;
+    border: 4px solid white;
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    position: relative;
+    overflow: hidden;
 }
 .image-container img, .link-image{
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    transition: 0.25s ease;
+    position: relative;
+}
+
+.image-container img:hover{
+    transform: scale(1.15);
 }
 
 button{
@@ -137,7 +145,7 @@ button:hover{
     transition: 250ms ease;
 }
 .link-image:hover{
-    background: rgba(255, 255, 255, 0.2);
+    background: white;
 }
 .author-name{
     margin-bottom: 0;
