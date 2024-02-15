@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: "my_poppins", serif;
+    box-sizing: border-box;
 }
 h1{
     letter-spacing: 1px;
@@ -15,6 +16,13 @@ h1{
     font-family: "my_inter";
     src: url("assets/fonts/inter/Inter-Regular.ttf");
 }
+
+
+::-webkit-scrollbar{
+    background-color: transparent;
+    width: 0;
+}
+
 
 @keyframes bounce-in-top {
     0% {
@@ -160,7 +168,7 @@ footer{
     padding: 0;
 }
 .shade{
-    color: gray;
+    color: rgb(128, 128, 128);
 }
 .mod-link{
     width: 45px;
@@ -178,17 +186,11 @@ footer{
 .nav-bar ul li{
     list-style-type: none;
     margin: 20px 0;
-    width: 30px;
-    height: 30px;
-    padding: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 25%;
 }
-.active{
-    border: 3px solid #04b4e0;
-    border-radius: 50%;
-    background-color: rgba(4, 180, 224, 0.5);
-    -webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-    animation: puff-in-center 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-}
+
 .nav-bar ul li img{
     height: 100%;
     width: 100%;
@@ -198,10 +200,13 @@ footer{
     background-color: rgba(4, 180, 224, 0.5);
     border-radius: 50%;
 }
-::-webkit-scrollbar{
-    width: 0;
+.active{
+    border: 3px solid #04b4e0;
+    border-radius: 50%;
+    background-color: rgba(4, 180, 224, 0.5);
+    -webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    animation: puff-in-center 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
-
 .me{
     color: #04b4e0;
 }
@@ -209,7 +214,6 @@ footer{
 @-webkit-keyframes tracking-in-expand-fwd {
     0% {
         letter-spacing: -0.5em;
-        -webkit-transform: translateZ(-700px);
         transform: translateZ(-700px);
         opacity: 0;
     }
@@ -217,7 +221,6 @@ footer{
         opacity: 0.6;
     }
     100% {
-        -webkit-transform: translateZ(0);
         transform: translateZ(0);
         opacity: 1;
     }
@@ -226,7 +229,6 @@ footer{
 @keyframes tracking-in-expand-fwd {
     0% {
         letter-spacing: -0.5em;
-        -webkit-transform: translateZ(-700px);
         transform: translateZ(-700px);
         opacity: 0;
     }
@@ -234,7 +236,6 @@ footer{
         opacity: 0.6;
     }
     100% {
-        -webkit-transform: translateZ(0);
         transform: translateZ(0);
         opacity: 1;
     }
@@ -267,28 +268,24 @@ footer{
 
 @keyframes slide-top {
     0% {
-        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
     100% {
-        -webkit-transform: translateY(-3px);
         transform: translateY(-3px);
     }
 }
 
 @keyframes scale-in-hor-left {
     0% {
-        -webkit-transform: scaleX(0);
         transform: scaleX(0);
-        -webkit-transform-origin: 0% 0%;
-        transform-origin: 0% 0%;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
         opacity: 1;
     }
     100% {
-        -webkit-transform: scaleX(1);
         transform: scaleX(1);
-        -webkit-transform-origin: 0% 0%;
-        transform-origin: 0% 0%;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
         opacity: 1;
     }
 }
@@ -297,7 +294,6 @@ footer{
     -webkit-animation: scale-in-hor-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
 
 
 
