@@ -10,7 +10,7 @@
     /*margin: 5px;*/
 }
 h2 span{
-    color: gray;
+    color: rgb(128, 128, 128);
     font-size: 0.85em;
 }
 .details p{
@@ -19,17 +19,15 @@ h2 span{
 
 @keyframes scale-in-ver-top {
     0% {
-        -webkit-transform: scaleY(0);
         transform: scaleY(0);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
+        -webkit-transform-origin: 100% 0;
+        transform-origin: 100% 0;
         opacity: 1;
     }
     100% {
-        -webkit-transform: scaleY(1);
         transform: scaleY(1);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;
+        -webkit-transform-origin: 100% 0;
+        transform-origin: 100% 0;
         opacity: 1;
     }
 }

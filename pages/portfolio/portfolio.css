@@ -1,7 +1,7 @@
 .main-portfolio-container{
     width: 100%;
     height: 100%;
-    /*border: #04b4e0 2px solid;*/
+    /*border: var(--dcol) 2px solid;*/
 }
 .main-portfolio-container nav ul{
     display: flex;

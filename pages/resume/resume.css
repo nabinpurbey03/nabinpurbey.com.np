@@ -32,18 +32,18 @@ p, li{
     font-size: 0.9em;
 }
 li::marker{
-    color: #04b4e0;
+    color: var(--dcol);
 }
 .outer{
     width: 100%;
     height: 16px;
-    border: 2px solid #04b4e0;
+    border: 2px solid var(--dcol);
     border-radius: 20px;
     padding-top: 0.7%;
 }
 .inner{
     height: 80%;
-    background-color: #04b4e0;
+    background-color: var(--dcol);
     border-radius: 20px;
     margin: 0 0 0 3px;
 }
@@ -98,7 +98,7 @@ li::marker{
     animation-delay: 2.7s;
 }
 .know-desc{
-    background-color: #04b4e0;
+    background-color: var(--dcol);
     color: white;
     border-radius: 5px;
     margin: 3px;

@@ -84,10 +84,10 @@ textarea {
 }
 
 .right-im-container button {
-    color: #04b4e0;
+    color: var(--dcol);
     background-color: white;
     border-radius: 25px;
-    border: 2px solid #04b4e0;
+    border: 2px solid var(--dcol);
     font-size: 16px;
     cursor: pointer;
     padding: 9px 35px;
@@ -96,7 +96,7 @@ textarea {
 
 .right-im-container button:hover {
     color: white;
-    background: #04b4e0;
+    background: var(--dcol);
     transition: 250ms ease;
 }
 
