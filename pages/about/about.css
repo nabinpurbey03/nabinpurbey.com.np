@@ -11,7 +11,7 @@
 }
 h2 span{
     color: rgb(128, 128, 128);
-    font-size: 0.85em;
+    font-size: 0.82em;
 }
 .details p{
     text-align: justify-all;
@@ -35,4 +35,15 @@ h2 span{
 .scale-in-ver-top {
     -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.logo{
+    width: 18%;
+    height: 12.5%;
+}
+
+.do-header{
+    letter-spacing: 2px;
+}
+li span{
+    font-weight: bold;
 }

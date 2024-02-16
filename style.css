@@ -22,7 +22,6 @@ h1{
 
 
 ::-webkit-scrollbar{
-    background-color: transparent;
     width: 0;
 }
 
@@ -119,6 +118,7 @@ body{
     border-radius: 50%;
     position: relative;
     overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 }
 .image-container img, .link-image{
     width: 100%;
@@ -170,7 +170,9 @@ footer{
     align-items: center;
     justify-content: center;
     align-content: center;
+
 }
+
 .head-name{
     font-size: 3em;
 }
@@ -256,10 +258,7 @@ footer{
     animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation-delay: 2400ms;
 }
-/*.puff-in-center {*/
-/*    -webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;*/
-/*    animation: puff-in-center 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;*/
-/*}*/
+
 @-webkit-keyframes puff-in-center {
     0% {
         /*-webkit-transform: scale(2);*/
