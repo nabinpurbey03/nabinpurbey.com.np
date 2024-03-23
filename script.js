@@ -38,5 +38,4 @@ function loadContact() {
 
 function reloadPage() {
     window.location.reload();
-
 }

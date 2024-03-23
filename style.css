@@ -1,13 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "my_poppins", serif;
     box-sizing: border-box;
 }
-:root{
+
+:root {
     --dcol: #04b4e0;
 }
-h1{
+
+h1 {
     letter-spacing: 1px;
 }
 
@@ -15,13 +17,14 @@ h1{
     font-family: "my_poppins";
     src: url("assets/fonts/poppins/Poppins-Regular.ttf");
 }
+
 @font-face {
     font-family: "my_inter";
     src: url("assets/fonts/inter/Inter-Regular.ttf");
 }
 
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 0;
 }
 
@@ -64,7 +67,7 @@ h1{
 }
 
 
-body{
+body {
     /*background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);*/
     height: 100vh;
     /*background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);*/
@@ -78,7 +81,8 @@ body{
     justify-items: center;
     color: white;
 }
-.main-div{
+
+.main-div {
     width: 170vh;
     height: 90vh;
     border-radius: 25px;
@@ -89,7 +93,8 @@ body{
     animation-duration: 2s;
     /*border: 2px solid black;*/
 }
-.head-container{
+
+.head-container {
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -98,7 +103,7 @@ body{
     align-items: center;
 }
 
-.info-container{
+.info-container {
     width: 70%;
     background-color: white;
     border-radius: 25px;
@@ -111,7 +116,7 @@ body{
     overflow-y: auto;
 }
 
-.image-container{
+.image-container {
     border: 4px solid white;
     width: 250px;
     height: 250px;
@@ -120,7 +125,8 @@ body{
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 }
-.image-container img, .link-image{
+
+.image-container img, .link-image {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -128,11 +134,11 @@ body{
     position: relative;
 }
 
-.image-container img:hover{
+.image-container img:hover {
     transform: scale(1.15);
 }
 
-button{
+button {
     color: white;
     background-color: var(--dcol);
     border-radius: 25px;
@@ -142,28 +148,34 @@ button{
     padding: 9px 35px;
     box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
 }
-button:hover{
+
+button:hover {
     color: var(--dcol);
     background: white;
     transition: 250ms ease;
 }
-.link-image:hover{
+
+.link-image:hover {
     background: white;
 }
-.author-name{
+
+.author-name {
     margin-bottom: 0;
 }
-footer{
+
+footer {
     font-size: 12px;
     margin-top: 120px;
 }
-.related-links{
+
+.related-links {
     display: flex;
     width: 100%;
     justify-content: center;
     margin: 15%;
 }
-.author-details{
+
+.author-details {
     display: flex;
     justify-items: center;
     flex-direction: column;
@@ -173,22 +185,26 @@ footer{
 
 }
 
-.head-name{
+.head-name {
     font-size: 3em;
 }
-.common{
+
+.common {
     margin: 0;
     padding: 0;
 }
-.shade{
+
+.shade {
     color: rgb(128, 128, 128);
 }
-.mod-link{
+
+.mod-link {
     width: 45px;
     height: 45px;
     margin: 0 10px;
 }
-.nav-bar{
+
+.nav-bar {
     position: relative;
     background: white;
     left: 55px;
@@ -196,7 +212,8 @@ footer{
     padding: 8px;
     /*width: 40px;*/
 }
-.nav-bar ul li{
+
+.nav-bar ul li {
     list-style-type: none;
     margin: 20px 0;
     width: 100%;
@@ -204,23 +221,32 @@ footer{
     padding: 25%;
 }
 
-.nav-bar ul li img{
+.nav-bar ul li img {
     height: 100%;
     width: 100%;
 }
-.nav-bar ul li:hover{
+
+.nav-bar ul li:hover {
     cursor: pointer;
     background-color: rgba(4, 180, 224, 0.5);
-    border-radius: 50%;
+    border-radius: 45%;
 }
-.active{
+
+li[onclick="reloadPage()"]:hover + #home-nav{
+    display: block;
+}
+#home-nav{
+    /*display: none;*/
+}
+.active {
     border: 3px solid var(--dcol);
-    border-radius: 50%;
+    border-radius: 45%;
     background-color: rgba(4, 180, 224, 0.5);
     -webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
     animation: puff-in-center 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
-.me{
+
+.me {
     color: var(--dcol);
 }
 
@@ -253,6 +279,7 @@ footer{
         opacity: 1;
     }
 }
+
 .tracking-in-expand-fwd {
     -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
