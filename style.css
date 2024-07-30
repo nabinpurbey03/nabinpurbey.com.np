@@ -70,7 +70,8 @@ h1 {
 body {
     height: 100vh;
     display: flex;
-    background-image: linear-gradient(to right, #fc00ff 0%, #00dbde 100%);
+    /*background-image: linear-gradient(to right, #fc00ff 0%, #00dbde 100%);*/
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
     justify-content: center;
     align-items: center;
     align-content: center;
