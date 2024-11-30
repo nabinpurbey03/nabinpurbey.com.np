@@ -66,10 +66,11 @@
 }
 .contents div{
     width: 40%;
-    height: 310px;
-    border: #00dbde solid 5px;
+    height: 300px;
+    color: #0582ca;
+    /*border: #00dbde solid 5px;*/
     border-radius: 15px;
-    overflow: hidden;
+    overflow: visible;
     margin: 20px 1px;
 }
 .contents div img{
@@ -88,6 +89,6 @@
     justify-content: space-around;
 }
 .contents div img:hover{
-    transform: scale(1.25);
+    transform: scale(1.08);
     cursor: pointer;
 }
