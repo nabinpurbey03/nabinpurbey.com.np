@@ -1,131 +1,262 @@
-.main-resume-container{
+/* ========================
+   Resume Page
+   ======================== */
+
+.main-resume-container {
     display: flex;
     width: 100%;
-    height: 100%;
+    gap: 16px;
 }
-.left-resume-container{
+
+.left-resume-container {
     width: 55%;
 }
-.right-resume-container{
+
+.right-resume-container {
     width: 45%;
-    /*border: 2px solid blueviolet;*/
-    margin-left: 5px;
-    margin-top: 60px;
 }
-.edu-cont{
+
+.edu-cont {
     display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
 }
-.year{
-    width: 35%;
-    /*margin: 0 10px;*/
-    margin-right: 20px;
+
+.year {
+    width: 32%;
+    margin-right: 0;
     display: inline-flex;
     flex-direction: column;
     align-items: flex-end;
+    flex-shrink: 0;
 }
-.desc{
-    width: 65%;
+
+.year h4 {
+    font-size: 0.85em;
 }
-p, li{
-    text-align: justify-all;
+
+.desc {
+    width: 68%;
+}
+
+.main-resume-container p,
+.main-resume-container li {
+    text-align: justify;
     color: grey;
-    font-size: 0.9em;
+    font-size: 0.88em;
+    line-height: 1.5;
 }
-li::marker{
+
+li::marker {
     color: var(--dcol);
 }
-.outer{
+
+/* ========================
+   Skill Bars
+   ======================== */
+.outer {
     width: 100%;
-    height: 16px;
+    height: 14px;
     border: 2px solid var(--dcol);
     border-radius: 20px;
-    padding-top: 0.7%;
+    padding: 1px 2px;
+    overflow: hidden;
 }
-.inner{
-    height: 80%;
+
+.inner {
+    height: 100%;
     background-color: var(--dcol);
     border-radius: 20px;
-    margin: 0 0 0 3px;
+    margin-left: 1px;
 }
-.skill-per{
+
+.skill-per {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
 }
-.skill{
-    margin: 20px 0;
+
+.skill-per h5 {
+    font-size: 0.85em;
 }
-.frontend{
-    width: 90%;
-    animation-delay: 0.6s;
+
+.skill-per p {
+    font-size: 0.8em;
+    color: var(--dcol) !important;
+    font-weight: bold;
 }
-.web{
-    width: 95%;
+
+.skill {
+    margin: 12px 0;
 }
-.backend{
-    width: 75%;
-    animation-delay: 0.9s;
-}
-.database{
-    width: 70%;
-    animation-delay: 1.2s;
-}
-.end-user{
-    width: 60%;
-    animation-delay: 0.3s;
-}
-.graphic{
-    width: 90%;
-    animation-delay: 1.5s;
-}
-.java{
-    width: 85%;
-    animation-delay: 1.8s;
-}
-.javaScript{
-    width: 80%;
-    animation-delay: 2.1s;
-}
-.dart{
-    width: 70%;
-    animation-delay: 3s;
-}
-.php{
-    width: 60%;
-    animation-delay: 2.4s;
-}
-.c-{
-    width: 60%;
-    animation-delay: 2.7s;
-}
-.know-desc{
+
+/* Skill bar widths */
+.frontend  { width: 90%; animation-delay: 0.6s; }
+.web       { width: 95%; }
+.backend   { width: 75%; animation-delay: 0.9s; }
+.database  { width: 70%; animation-delay: 1.2s; }
+.end-user  { width: 60%; animation-delay: 0.3s; }
+.graphic   { width: 90%; animation-delay: 1.5s; }
+.java      { width: 85%; animation-delay: 1.8s; }
+.javaScript { width: 80%; animation-delay: 2.1s; }
+.dart      { width: 70%; animation-delay: 3s; }
+.php       { width: 60%; animation-delay: 2.4s; }
+.c-        { width: 60%; animation-delay: 2.7s; }
+
+/* ========================
+   Knowledge Tags
+   ======================== */
+.know-desc {
     background-color: var(--dcol);
     color: white;
     border-radius: 5px;
     margin: 3px;
-    padding: 5px 5px;
+    padding: 5px;
+    font-size: 0.82em;
 }
-.knowledge{
+
+.knowledge {
     display: flex;
     flex-wrap: wrap;
 }
 
-
+/* ========================
+   Animations
+   ======================== */
 @keyframes scale-in-ver-bottom {
     0% {
         transform: scaleY(0);
-        -webkit-transform-origin: 0% 100%;
         transform-origin: 0% 100%;
         opacity: 1;
     }
     100% {
         transform: scaleY(1);
-        -webkit-transform-origin: 0% 100%;
         transform-origin: 0% 100%;
         opacity: 1;
     }
 }
 
 .scale-in-ver-bottom {
-    -webkit-animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: scale-in-ver-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-ver-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* ========================
+   RESPONSIVE — Tablet (768px – 1024px)
+   ======================== */
+@media (max-width: 1024px) {
+    .main-resume-container {
+        gap: 12px;
+    }
+
+    .left-resume-container {
+        width: 54%;
+    }
+
+    .right-resume-container {
+        width: 46%;
+    }
+
+    .year {
+        width: 30%;
+    }
+
+    .desc {
+        width: 70%;
+    }
+
+    .main-resume-container p,
+    .main-resume-container li {
+        font-size: 0.82em;
+    }
+}
+
+/* ========================
+   RESPONSIVE — Mobile (≤ 768px)
+   ======================== */
+@media (max-width: 768px) {
+    .main-resume-container {
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .left-resume-container {
+        width: 100%;
+        overflow-y: visible;
+    }
+
+    .right-resume-container {
+        width: 100%;
+        margin-top: 20px;
+        overflow-y: visible;
+    }
+
+    .edu-cont {
+        gap: 8px;
+    }
+
+    .year {
+        width: 28%;
+        align-items: flex-start;
+    }
+
+    .year h4 {
+        font-size: 0.78em;
+    }
+
+    .desc {
+        width: 72%;
+    }
+
+    .main-resume-container p,
+    .main-resume-container li {
+        font-size: 0.82em;
+        text-align: left; /* left align on small screens — justified text looks odd narrow */
+    }
+
+    .main-resume-container h1 {
+        font-size: 1.3em;
+    }
+
+    .main-resume-container h2 {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+
+    .main-resume-container h3 {
+        font-size: 0.9em;
+    }
+
+    .skill {
+        margin: 8px 0;
+    }
+
+    .outer {
+        height: 12px;
+    }
+
+    .know-desc {
+        font-size: 0.78em;
+        padding: 4px;
+    }
+}
+
+/* ========================
+   RESPONSIVE — Small Mobile (≤ 400px)
+   ======================== */
+@media (max-width: 400px) {
+    .year {
+        width: 25%;
+    }
+
+    .desc {
+        width: 75%;
+    }
+
+    .main-resume-container p,
+    .main-resume-container li {
+        font-size: 0.78em;
+    }
 }

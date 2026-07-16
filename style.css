@@ -1,18 +1,30 @@
+/* ========================
+   CSS Custom Properties
+   ======================== */
+:root {
+    --dcol: #04b4e0;
+    --transition-base: 250ms ease;
+    --nav-size-desktop: 60px;
+    --nav-bottom-height: 64px;
+}
+
+/* ========================
+   Reset & Base
+   ======================== */
 * {
     margin: 0;
     padding: 0;
-    font-family: "my_poppins", serif;
     box-sizing: border-box;
-}
-
-:root {
-    --dcol: #04b4e0;
+    font-family: "my_poppins", serif;
 }
 
 h1 {
     letter-spacing: 1px;
 }
 
+/* ========================
+   Custom Fonts
+   ======================== */
 @font-face {
     font-family: "my_poppins";
     src: url("assets/fonts/poppins/Poppins-Regular.ttf");
@@ -23,12 +35,16 @@ h1 {
     src: url("assets/fonts/inter/Inter-Regular.ttf");
 }
 
-
+/* ========================
+   Scrollbar
+   ======================== */
 ::-webkit-scrollbar {
     width: 0;
 }
 
-
+/* ========================
+   Animations
+   ======================== */
 @keyframes bounce-in-top {
     0% {
         transform: translateY(-500px);
@@ -66,35 +82,90 @@ h1 {
     }
 }
 
+@keyframes tracking-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
 
+@keyframes slide-top {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes scale-in-hor-left {
+    0% {
+        transform: scaleX(0);
+        transform-origin: 0 0;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: 0 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-blurred-right {
+    0% {
+        transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+        transform-origin: 0% 50%;
+        filter: blur(40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scaleY(1) scaleX(1);
+        transform-origin: 50% 50%;
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* ========================
+   Body & Layout — Desktop
+   ======================== */
 body {
     height: 100vh;
     display: flex;
-    /*background-image: linear-gradient(to right, #fc00ff 0%, #00dbde 100%);*/
-    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
     justify-content: center;
     align-items: center;
-    align-content: center;
-    justify-items: center;
     color: white;
 }
 
 .main-div {
     width: 170vh;
+    max-width: 96vw;
     height: 90vh;
     border-radius: 25px;
     background-color: var(--dcol);
     display: flex;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
-    animation-name: bounce-in-top;
-    animation-duration: 2s;
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0 54px 55px,
+        rgba(0, 0, 0, 0.12) 0 -12px 30px,
+        rgba(0, 0, 0, 0.12) 0 4px 6px,
+        rgba(0, 0, 0, 0.17) 0 12px 13px,
+        rgba(0, 0, 0, 0.09) 0 -3px 5px;
+    animation: bounce-in-top 2s both;
 }
 
 .head-container {
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-items: center;
     justify-content: center;
     align-items: center;
 }
@@ -105,13 +176,32 @@ body {
     border-radius: 25px;
     color: black;
     display: flex;
-    justify-items: center;
     justify-content: center;
     align-items: center;
     padding: 60px;
     overflow-y: auto;
 }
 
+/* ========================
+   Page Sections (show/hide)
+   ======================== */
+.page-section {
+    width: 100%;
+    height: auto;
+}
+
+/* Home section stays vertically + horizontally centered */
+.page-section--centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ========================
+   Profile Image
+   ======================== */
 .image-container {
     border: 4px solid white;
     width: 250px;
@@ -119,14 +209,17 @@ body {
     border-radius: 50%;
     position: relative;
     overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    box-shadow:
+        rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 }
 
-.image-container img, .link-image {
+.image-container img,
+.link-image {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    transition: 0.25s ease;
+    transition: transform var(--transition-base);
     position: relative;
 }
 
@@ -134,27 +227,35 @@ body {
     transform: scale(1.15);
 }
 
+/* ========================
+   Buttons
+   ======================== */
 button {
     color: white;
     background-color: var(--dcol);
     border-radius: 25px;
-    border: 2px white solid;
+    border: 2px solid white;
     font-size: 16px;
     cursor: pointer;
     padding: 9px 35px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+    box-shadow:
+        rgba(0, 0, 0, 0.16) 0 3px 6px,
+        rgba(0, 0, 0, 0.23) 0 3px 6px;
+    transition: color var(--transition-base), background-color var(--transition-base);
 }
 
 button:hover {
     color: var(--dcol);
-    background: white;
-    transition: 250ms ease;
+    background-color: white;
 }
 
 .link-image:hover {
-    background: white;
+    background-color: white;
 }
 
+/* ========================
+   Author Details
+   ======================== */
 .author-name {
     margin-bottom: 0;
 }
@@ -173,12 +274,9 @@ footer {
 
 .author-details {
     display: flex;
-    justify-items: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    align-content: center;
-
 }
 
 .head-name {
@@ -194,19 +292,33 @@ footer {
     color: rgb(128, 128, 128);
 }
 
+.me {
+    color: var(--dcol);
+}
+
+/* ========================
+   Social / Mod Links
+   ======================== */
 .mod-link {
     width: 45px;
     height: 45px;
     margin: 0 10px;
 }
 
+/* ========================
+   Navigation Bar — Desktop (vertical sidebar)
+   ======================== */
 .nav-bar {
     position: relative;
     background: white;
     left: 55px;
     border-radius: 50px;
     padding: 8px;
-    /*width: 40px;*/
+    z-index: 10; /* must sit above .main-div animation stacking context */
+}
+
+.nav-bar ul {
+    padding: 0;
 }
 
 .nav-bar ul li {
@@ -215,6 +327,7 @@ footer {
     width: 100%;
     height: 100%;
     padding: 25%;
+    position: relative;
 }
 
 .nav-bar ul li img {
@@ -226,109 +339,276 @@ footer {
     cursor: pointer;
 }
 
-
 .active {
     border: 3px solid var(--dcol);
     border-radius: 45%;
     background-color: rgba(4, 180, 224, 0.5);
 }
 
-.me {
-    color: var(--dcol);
-}
-
-@keyframes tracking-in-expand-fwd {
-    0% {
-        letter-spacing: -0.5em;
-        transform: translateZ(-700px);
-        opacity: 0;
-    }
-    40% {
-        opacity: 0.6;
-    }
-    100% {
-        transform: translateZ(0);
-        opacity: 1;
-    }
-}
-
-.tracking-in-expand-fwd {
-    -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-    animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-    animation-delay: 2400ms;
-}
-
-@keyframes slide-top {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-3px);
-    }
-}
-
-@keyframes scale-in-hor-left {
-    0% {
-        transform: scaleX(0);
-        -webkit-transform-origin: 0 0;
-        transform-origin: 0 0;
-        opacity: 1;
-    }
-    100% {
-        transform: scaleX(1);
-        -webkit-transform-origin: 0 0;
-        transform-origin: 0 0;
-        opacity: 1;
-    }
-}
-
-.scale-in-hor-left {
-    -webkit-animation: scale-in-hor-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: scale-in-hor-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-
-.nav-info{
+.nav-info {
     display: none;
     position: absolute;
     left: -85px;
+    top: 50%;
+    transform: translateY(-50%);
     background-color: #4facfe;
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 10px;
     letter-spacing: 2px;
+    white-space: nowrap;
+    color: white;
+    pointer-events: none; /* tooltip must never intercept clicks */
 }
 
-.nav-bar ul li img:hover + .nav-info{
+.nav-bar ul li:hover .nav-info {
     display: block;
+}
 
+/* ========================
+   Animation Utility Classes
+   ======================== */
+.tracking-in-expand-fwd {
+    animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation-delay: 2400ms;
+}
+
+.scale-in-hor-left {
+    animation: scale-in-hor-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .slide-in-blurred-right {
-    -webkit-animation: slide-in-blurred-right 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-    animation: slide-in-blurred-right 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    animation: slide-in-blurred-right 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
-@keyframes slide-in-blurred-right {
-    0% {
-        transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
-        -webkit-transform-origin: 0% 50%;
-        transform-origin: 0% 50%;
-        -webkit-filter: blur(40px);
-        filter: blur(40px);
-        opacity: 0;
+/* ========================
+   RESPONSIVE — Tablet (768px – 1024px)
+   ======================== */
+@media (max-width: 1024px) {
+    body {
+        align-items: center;
+        padding: 12px;
     }
-    100% {
-        transform: translateX(0) scaleY(1) scaleX(1);
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-        opacity: 1;
+
+    .main-div {
+        width: 100%;
+        height: 92vh;
+        border-radius: 20px;
+    }
+
+    .head-container {
+        width: 32%;
+    }
+
+    .info-container {
+        width: 68%;
+        padding: 30px 24px;
+        border-radius: 20px;
+    }
+
+    .image-container {
+        width: 160px;
+        height: 160px;
+    }
+
+    .head-name {
+        font-size: 2.2em;
+    }
+
+    footer {
+        margin-top: 40px;
+        font-size: 11px;
+    }
+
+    .related-links {
+        margin: 8%;
+    }
+
+    /* Sidebar nav stays but moves closer */
+    .nav-bar {
+        left: 20px;
+    }
+
+    .nav-info {
+        left: -80px;
     }
 }
 
+/* ========================
+   RESPONSIVE — Mobile (≤ 768px)
+   ======================== */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        padding: 0;
+        height: 100dvh;
+        overflow: hidden;
+    }
 
+    /* Card becomes full-screen column */
+    .main-div {
+        width: 100vw;
+        height: calc(100dvh - var(--nav-bottom-height));
+        max-width: 100vw;
+        border-radius: 0;
+        flex-direction: column;
+        animation: none; /* skip bounce on mobile for perf */
+        box-shadow: none;
+    }
 
+    /* Sidebar becomes a compact horizontal top header */
+    .head-container {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        background-color: var(--dcol);
+        flex-shrink: 0;
+    }
 
+    .image-container {
+        width: 60px;
+        height: 60px;
+        border-width: 2px;
+        flex-shrink: 0;
+    }
 
+    /* Hide author name text + social links in mobile top bar to save space */
+    .head-container .author-details {
+        align-items: flex-start;
+    }
+
+    .head-container .author-details h1 {
+        font-size: 1em;
+        letter-spacing: 0;
+    }
+
+    .head-container .author-details h3 {
+        font-size: 0.7em;
+        font-weight: 400;
+    }
+
+    .related-links {
+        margin: 0;
+        width: auto;
+        gap: 0;
+    }
+
+    .mod-link {
+        width: 28px;
+        height: 28px;
+        margin: 0 5px;
+    }
+
+    button {
+        font-size: 13px;
+        padding: 6px 18px;
+    }
+
+    footer {
+        display: none; /* hidden on mobile to avoid clutter */
+    }
+
+    /* Info container fills the rest */
+    .info-container {
+        width: 100%;
+        border-radius: 0;
+        padding: 20px 16px;
+        flex: 1;
+        overflow-y: auto;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .head-name {
+        font-size: 2em;
+    }
+
+    /* ========================
+       Mobile Bottom Navigation Bar
+       ======================== */
+    .nav-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: var(--nav-bottom-height);
+        background: white;
+        border-radius: 20px 20px 0 0;
+        padding: 6px 0;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+        z-index: 1000;
+
+        /* override desktop positioning */
+        display: flex;
+        align-items: center;
+        left: 0; /* override the desktop `left: 55px` */
+    }
+
+    .nav-bar ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-bar ul li {
+        margin: 0;
+        padding: 6px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        position: relative;
+    }
+
+    .nav-bar ul li img {
+        width: 26px;
+        height: 26px;
+    }
+
+    /* Hide the desktop hover tooltips on mobile */
+    .nav-info {
+        display: none !important;
+    }
+
+    .active {
+        border-radius: 12px;
+    }
+}
+
+/* ========================
+   RESPONSIVE — Small Mobile (≤ 400px)
+   ======================== */
+@media (max-width: 400px) {
+    .head-container .author-details h1 {
+        font-size: 0.9em;
+    }
+
+    .head-container .author-details h3 {
+        font-size: 0.65em;
+    }
+
+    .mod-link {
+        width: 24px;
+        height: 24px;
+        margin: 0 3px;
+    }
+
+    .image-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .info-container {
+        padding: 16px 12px;
+    }
+}

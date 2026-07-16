@@ -1,49 +1,118 @@
-/* .................. ABOUT ME SECTION .................. */
+/* ========================
+   About Me Section
+   ======================== */
 
-.about-details{
+.about-details {
     display: flex;
     width: 100%;
-    height: 100%;
+    gap: 24px;
 }
-.details{
+
+.details {
     width: 50%;
-    /*margin: 5px;*/
 }
-h2 span{
+
+h2 span {
     color: rgb(128, 128, 128);
     font-size: 0.82em;
 }
-.details p{
-    text-align: justify-all;
+
+.details p {
+    text-align: justify;
+    line-height: 1.6;
 }
 
+.logo {
+    width: 18%;
+    height: auto;
+    max-width: 60px;
+}
+
+.do-header {
+    letter-spacing: 2px;
+}
+
+li span {
+    font-weight: bold;
+}
+
+/* ========================
+   About Animation
+   ======================== */
 @keyframes scale-in-ver-top {
     0% {
         transform: scaleY(0);
-        -webkit-transform-origin: 100% 0;
         transform-origin: 100% 0;
         opacity: 1;
     }
     100% {
         transform: scaleY(1);
-        -webkit-transform-origin: 100% 0;
         transform-origin: 100% 0;
         opacity: 1;
     }
 }
 
 .scale-in-ver-top {
-    -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-.logo{
-    width: 18%;
-    height: 12.5%;
+    animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.do-header{
-    letter-spacing: 2px;
+/* ========================
+   RESPONSIVE — Tablet (768px – 1024px)
+   ======================== */
+@media (max-width: 1024px) {
+    .about-details {
+        gap: 16px;
+    }
+
+    .details {
+        width: 50%;
+    }
+
+    .logo {
+        width: 14%;
+        max-width: 48px;
+    }
 }
-li span{
-    font-weight: bold;
+
+/* ========================
+   RESPONSIVE — Mobile (≤ 768px)
+   ======================== */
+@media (max-width: 768px) {
+    .about-details {
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+    }
+
+    .details {
+        width: 100%;
+    }
+
+    .details p {
+        font-size: 0.9em;
+    }
+
+    .logo {
+        width: 40px;
+        max-width: 40px;
+        height: auto;
+    }
+
+    .do-header {
+        font-size: 1em;
+        letter-spacing: 1px;
+    }
+
+    h2 span {
+        font-size: 0.85em;
+    }
+}
+
+/* ========================
+   RESPONSIVE — Small Mobile (≤ 400px)
+   ======================== */
+@media (max-width: 400px) {
+    .details p {
+        font-size: 0.85em;
+    }
 }

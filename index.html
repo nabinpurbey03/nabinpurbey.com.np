@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nabin Purbey — Full Stack Web Developer, DevOps Engineer, and Data Analyst based in Kathmandu, Nepal.">
     <title>Nabin Purbey</title>
     <link rel="icon" href="assets/images/n_logo.png" type="image/x-icon">
+    <!-- Core styles -->
     <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- Page-specific styles pre-loaded in head (no fetch needed) -->
+    <link rel="stylesheet" href="pages/about/about.css" type="text/css">
+    <link rel="stylesheet" href="pages/resume/resume.css" type="text/css">
+    <link rel="stylesheet" href="pages/portfolio/portfolio.css" type="text/css">
+    <link rel="stylesheet" href="pages/contact/contact.css" type="text/css">
 </head>
 <body>
 <div class="main-div">
+    <!-- Left panel: profile card -->
     <div class="head-container">
         <div class="image-container">
             <img src="assets/images/profile_pic_2.png" alt="Profile Image" loading="lazy">
@@ -17,54 +26,434 @@
             <h3>Software Developer</h3>
         </div>
         <div class="related-links">
-            <div class="mod-link"><a href="https://github.com/nabinpurbey03" target="_blank"><img class="link-image"
-                                                                                                  src="assets/icons/github.png"
-                                                                                                  alt="Github"></a>
+            <div class="mod-link">
+                <a href="https://github.com/nabinpurbey03" target="_blank">
+                    <img class="link-image" src="assets/icons/github.png" alt="Github">
+                </a>
             </div>
-            <div class="mod-link"><a href="https://www.linkedin.com/in/nabin-purbey-55961a230/" target="_blank"><img
-                    class="link-image" src="assets/icons/linkedin1.png" alt="Linkedin"></a></div>
-            <div class="mod-link"><a href="#"><img class="link-image"
-                                                   title="N/A"
-                                                   src="assets/icons/twitter1.png"
-                                                   alt="Linkedin"></a>
+            <div class="mod-link">
+                <a href="https://www.linkedin.com/in/nabin-purbey-55961a230/" target="_blank">
+                    <img class="link-image" src="assets/icons/linkedin1.png" alt="Linkedin">
+                </a>
             </div>
-            <div class="mod-link"><a href="mailto:purbeynabin@gmail.com" target="_blank"><img class="link-image"
-                                                                                              src="assets/icons/email1.png"
-                                                                                              alt="Email"></a></div>
+            <div class="mod-link">
+                <a href="#" title="N/A">
+                    <img class="link-image" src="assets/icons/twitter1.png" alt="Twitter">
+                </a>
+            </div>
+            <div class="mod-link">
+                <a href="mailto:purbeynabin@gmail.com" target="_blank">
+                    <img class="link-image" src="assets/icons/email1.png" alt="Email">
+                </a>
+            </div>
         </div>
         <button onclick="window.open('downloadable/resume-download.html','_blank');">Download CV</button>
         <footer>&copy; 2024, Nabin Purbey all right reserved</footer>
     </div>
 
-    <!--    Information here-->
+    <!-- Right panel: content sections (show/hide via JS — no fetch needed) -->
     <div class="info-container">
-        <div class="author-details">
-            <h1 class="common head-name tracking-in-expand-fwd">Nabin Purbey</h1>
-            <h4 class="common shade">Full Stack Web Developer</h4>
-            <h4 class="common shade">DevOps Engineer</h4>
-            <h4 class="common shade">Data Analyst</h4>
+
+        <!-- ===== HOME SECTION ===== -->
+        <div id="home-section" class="page-section page-section--centered">
+            <div class="author-details">
+                <h1 class="common head-name tracking-in-expand-fwd">Nabin Purbey</h1>
+                <h4 class="common shade">Full Stack Web Developer</h4>
+                <h4 class="common shade">DevOps Engineer</h4>
+                <h4 class="common shade">Data Analyst</h4>
+            </div>
         </div>
-    </div>
-</div>
+
+        <!-- ===== ABOUT SECTION ===== -->
+        <div id="about-section" class="page-section" style="display:none">
+            <div class="about-details scale-in-ver-top">
+                <div class="details">
+                    <h1>About <span class="me">Me</span></h1>
+                    <p>I am currently in my third year of the integrated Bachelors program, a four-year course that has provided me
+                        with a robust foundation in various academic disciplines. I inspired a lot by innovation and technology and love
+                        to code. <br><br>
+                        I specialize in <b>Java programming</b>, demonstrating a strong command of its syntax and staying abreast
+                        of the latest features in modern Java. My proficiency extends to key data structures like HashMap and HashSet, and I
+                        possess a solid understanding of network programming, particularly in TCP/IP and WebSocket technologies. I have
+                        successfully tackled numerous challenges on platforms like LeetCode, showcasing my problem-solving skills with
+                        Java. I possess a solid understanding of programming languages, including C, Dart, PHP, and JavaScript.
+                    </p>
+                    <br><br>
+                    <h2>What <span class="me">I Do?</span></h2>
+                    <br>
+                    <img src="assets/images/github-big.png" alt="GitHub logo" class="logo">
+                    <h3 class="do-header">Open Source Contributions</h3>
+                    <ul>
+                        <li>Actively contribute to various open-source projects on platforms such as GitHub.</li>
+                        <li>Regularly participate in code reviews, issue tracking, and feature development for projects ranging from
+                            <span>End User Applications</span> and <span>Web Applications</span>.
+                        </li>
+                        <li>Collaborate with diverse teams of developers worldwide, fostering an environment of shared learning and innovation.</li>
+                    </ul>
+                    <br><br>
+                    <img src="assets/images/flutter.png" alt="Flutter logo" class="logo">
+                    <h3 class="do-header">Android/iOS App Development</h3>
+                    <ul>
+                        <li>Skilled in developing cross-platform mobile applications using Flutter framework for iOS and Android platforms.</li>
+                        <li>Proficient in leveraging Flutter's widget library to design intuitive and responsive user interfaces that adhere to platform-specific design guidelines.</li>
+                        <li>Experienced in integrating APIs, third-party libraries, and backend services to enhance app functionality and user experience.</li>
+                        <li>Capable of optimizing app performance and ensuring code maintainability through best practices such as code modularization, state management, and code refactoring.</li>
+                        <li>Familiarity with Flutter's development tools including Flutter SDK, Dart programming language, and Flutter DevTools for debugging and performance profiling.</li>
+                    </ul>
+                </div>
+                <div class="details">
+                    <br><br>
+                    <h2 class="me">&nbsp; Age <span>22</span></h2>
+                    <h2 class="me">&nbsp; Address <span class="dec-font">New Baneshwor, Kathmandu</span></h2>
+                    <h2 class="me">&nbsp; Residence <span>Nepal</span></h2>
+                    <h2 class="me">&nbsp; Postal/Zip Code <span>44600</span></h2>
+                    <h2 class="me">&nbsp; Email <span>nabinbim21@oic.edu.np</span></h2>
+                    <h2 class="me">&nbsp; Phone <span>+977 980-766-9620</span></h2>
+                    <h2 class="me">&nbsp; Major <span>Information Technology</span></h2>
+                    <h2 class="me">&nbsp; University <span>Tribhuvan University</span></h2>
+                    <div>
+                        <br><br><br><br><br><br><br><br><br><br>
+                        <img src="assets/images/cloud-computing.png" alt="Cloud Computing logo" class="logo">
+                        <h3 class="do-header">Cloud Computing</h3>
+                        <ul>
+                            <li>Proficient in leveraging cloud computing technologies to design, deploy, and manage scalable and reliable infrastructure solutions.</li>
+                            <li>Experienced in working with leading cloud platforms such as Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).</li>
+                            <li>Skilled in configuring and optimizing cloud-based services including compute, storage, networking, databases, and serverless architectures.</li>
+                            <li>Hands-on experience with cloud deployment models such as Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).</li>
+                            <li>Familiarity with cloud-native tools and technologies including containers (e.g., Docker, Kubernetes), serverless computing (e.g., AWS Lambda, Azure Functions), and orchestration tools (e.g., Terraform, Ansible).</li>
+                        </ul>
+                        <br><br>
+                        <img src="assets/images/management.png" alt="Management logo" class="logo">
+                        <h3 class="do-header">Management</h3>
+                        <ul>
+                            <li><span>Leadership:</span> Demonstrated ability to lead and motivate teams to achieve common goals and objectives. Skilled in providing direction, coaching, and mentorship to team members to foster professional growth and development.</li>
+                            <li><span>Team Building:</span> Proven track record of building high-performing teams through effective recruitment, onboarding, and talent development strategies. Capable of fostering a collaborative and inclusive work environment that encourages teamwork, creativity, and innovation.</li>
+                            <li><span>Communication:</span> Strong communication skills, both verbal and written, with the ability to articulate ideas, convey information, and influence stakeholders at all levels of the organization. Skilled in facilitating effective meetings, presentations, and discussions to ensure alignment and clarity of goals and expectations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== RESUME SECTION ===== -->
+        <div id="resume-section" class="page-section" style="display:none">
+            <div class="main-resume-container scale-in-ver-bottom">
+                <div class="left-resume-container">
+                    <h1>Resume</h1>
+                    <h2>Education</h2>
+                    <div class="edu-cont">
+                        <div class="year">
+                            <h4>2020</h4>
+                            <p>National Examination</p>
+                            <p>Board</p>
+                        </div>
+                        <div class="desc">
+                            <h3>Intermediate In Science</h3>
+                            <p>Studied plus two in Science, an integrated package in Physics, Chemistry and Mathematics. The
+                                program aims to equip us with a level fit for further studies in technology,
+                                engineering and biotechnology. This program aims to develop strong foundation in medicine,
+                                engineering or other science related studies.</p>
+                        </div>
+                    </div>
+                    <div class="edu-cont">
+                        <div class="year">
+                            <h4>2020</h4>
+                            <p>National Examination</p>
+                            <p>Board</p>
+                        </div>
+                        <div class="desc">
+                            <h3>Diploma In Electrical Engineering</h3>
+                            <p>Studied Electrical Engineering, an integrated package in Engineering Drawing, Basic Electronics,
+                                Electrical Machines, Electrical Installation and Maintenance. This program aims to develop strong
+                                foundation in Electrical Engineering and Electronics science.</p>
+                        </div>
+                    </div>
+                    <h2>Experience</h2>
+                    <div class="edu-cont">
+                        <div class="year">
+                            <h4>2020 - 2021</h4>
+                            <p>Uniweb Technologies</p>
+                            <p>Kathmandu, Nepal</p>
+                        </div>
+                        <div class="desc">
+                            <h3>Sales Team Leader</h3>
+                            <ul>
+                                <li>Motivate and coach employees to meet service, sales, and repair goals.</li>
+                                <li>Create and modify employee schedules with service levels in mind.</li>
+                                <li>Recruit and hire top mechanics, service advisors, and sales people.</li>
+                                <li>Maintain detailed logs and reports of services performed, profit, and budget information.</li>
+                                <li>Help out in sales and repair areas as needed and maintain comprehensive current knowledge of operations.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="edu-cont">
+                        <div class="year">
+                            <h4>2021 - 2022</h4>
+                            <p>Centrix Contact Centre</p>
+                            <p>Kathmandu, Nepal</p>
+                        </div>
+                        <div class="desc">
+                            <h3>Sales Team Leader</h3>
+                            <ul>
+                                <li>Answered customer questions and resolved service issues in a timely manner.</li>
+                                <li>Diagnosed customer issues by asking probing questions and write up repair orders.</li>
+                                <li>Ordered supplies and kept inventory at optimal levels.</li>
+                                <li>Coordinated equipment repairs and maintenance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2>Certificates</h2>
+                    <div>
+                        <h2 class="me">No Certificate Available for now</h2>
+                    </div>
+                </div>
+                <div class="right-resume-container">
+                    <h2>Design <span class="me">Skills</span></h2>
+                    <div>
+                        <div class="skill-per">
+                            <h5>Web Design</h5>
+                            <p>95%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner web scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-per">
+                            <h5>End User Application</h5>
+                            <p>60%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner end-user scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-per">
+                            <h5>Frontend Design</h5>
+                            <p>90%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner frontend scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-per">
+                            <h5>Backend Design</h5>
+                            <p>75%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner backend scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-per">
+                            <h5>Database Design</h5>
+                            <p>70%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner database scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-per">
+                            <h5>Graphic Design</h5>
+                            <p>90%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner graphic scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <h2>Coding <span class="me">Skills</span></h2>
+                    <div>
+                        <div class="skill-per">
+                            <h5>Java</h5>
+                            <p>85%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner java scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-per">
+                            <h5>JavaScript</h5>
+                            <p>80%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner javaScript scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-per">
+                            <h5>PHP</h5>
+                            <p>60%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner php scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-per">
+                            <h5>C</h5>
+                            <p>60%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner c- scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-per">
+                            <h5>Dart/Flutter</h5>
+                            <p>70%</p>
+                        </div>
+                        <div class="outer">
+                            <div class="inner dart scale-in-hor-left"></div>
+                        </div>
+                    </div>
+                    <h2>Knowledge</h2>
+                    <div class="knowledge">
+                        <div class="know-desc">Problem Solving</div>
+                        <div class="know-desc">Social Marketing</div>
+                        <div class="know-desc">Marketing</div>
+                        <div class="know-desc">Client Dealing</div>
+                        <div class="know-desc">Flexibility</div>
+                        <div class="know-desc">Communication</div>
+                        <div class="know-desc">Social Networking</div>
+                        <div class="know-desc">Adaptability</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PORTFOLIO SECTION ===== -->
+        <div id="portfolio-section" class="page-section" style="display:none">
+            <div class="main-portfolio-container bounce-in-left">
+                <h1>Portfolio</h1>
+                <nav>
+                    <ul>
+                        <li>All</li>
+                        <li>Github</li>
+                        <li>Detailed</li>
+                        <li>Mockups</li>
+                        <li>Sound Cloud</li>
+                        <li>Youtube</li>
+                    </ul>
+                </nav>
+                <div class="contents">
+                    <div>
+                        <img src="assets/images/cloud-compute.jpeg" alt="Cloud Computing">
+                        <h3>Cloud Computing</h3>
+                    </div>
+                    <div>
+                        <img src="assets/images/python.png" alt="Python Programming">
+                        <h3>Python Programming</h3>
+                    </div>
+                    <div>
+                        <img src="assets/images/ml.png" alt="Machine Learning">
+                        <h3>Machine Learning</h3>
+                    </div>
+                    <div>
+                        <img src="assets/images/data_science_analysis.png" alt="Data Science">
+                        <h3>Data Science and Analytics</h3>
+                    </div>
+                    <div>
+                        <img src="assets/images/devops.png" alt="DevOps Engineering">
+                        <h3>DevOps Engineering</h3>
+                    </div>
+                    <div>
+                        <img src="assets/images/flutter-img.png" alt="Flutter">
+                        <h3>Flutter</h3>
+                    </div>
+                    <div>
+                        <img src="assets/images/java.png" alt="Java Programming">
+                        <h3>Java Programming</h3>
+                    </div>
+                    <div>
+                        <img src="assets/images/php_mysql.png" alt="PHP with MySQL">
+                        <h3>PHP With MySql</h3>
+                    </div>
+                    <div>
+                        <img src="assets/images/github-img.png" alt="Github">
+                        <h3>Github</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CONTACT SECTION ===== -->
+        <div id="contact-section" class="page-section" style="display:none">
+            <div class="main-im-container slide-in-elliptic-left-fwd">
+                <div class="left-im-container">
+                    <h1>Contact</h1>
+                    <div class="im-container">
+                        <img src="assets/icons/location.png" alt="Location">
+                        <h3>Kathmandu</h3>
+                    </div>
+                    <div class="im-container">
+                        <img src="assets/icons/phone.png" alt="Phone">
+                        <h3>980-766-9620</h3>
+                    </div>
+                    <div class="im-container">
+                        <img src="assets/icons/mail.png" alt="Email">
+                        <h3>nabinbim21@oic.edu.np</h3>
+                    </div>
+                    <div class="im-container">
+                        <img src="assets/icons/checked.png" alt="Available">
+                        <h3>Open for freelance</h3>
+                    </div>
+                </div>
+                <div class="right-im-container">
+                    <div class="im-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2100.601927745807!2d85.33528319755159!3d27.693280574362603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19e908b36f51%3A0x6bdb7054ec60a79d!2sEyeplex%20Mall!5e0!3m2!1sen!2snp!4v1706638305376!5m2!1sen!2snp"
+                                loading="lazy" title="Location Map"></iframe>
+                    </div>
+                    <div><h2 class="help-you">How Can I <span class="me">Help You?</span></h2></div>
+                    <div class="contactor">
+                        <div class="left-contactor">
+                            <label for="full-name"></label>
+                            <input type="text" id="full-name" placeholder="Full Name">
+                            <label for="email"></label>
+                            <input type="text" id="email" placeholder="Email">
+                            <label for="subject"></label>
+                            <input type="text" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="message-contactor">
+                            <label for="message"></label>
+                            <textarea id="message" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <button>Send Message</button>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /.info-container -->
+</div><!-- /.main-div -->
+
 <nav class="nav-bar">
     <ul>
-        <li onclick="reloadPage()" class="active nav-link"><img src="assets/icons/home1.png" alt="Home">
-            <section class="nav-info slide-in-blurred-right">Home</section>
+        <li onclick="showHome()" class="active nav-link">
+            <img src="assets/icons/home1.png" alt="Home">
+            <section class="nav-info">Home</section>
         </li>
-        <li onclick="loadAbout()"><img src="assets/icons/about.png" alt="About">
-            <section class="nav-info slide-in-blurred-right">About</section>
+        <li onclick="showAbout()">
+            <img src="assets/icons/about.png" alt="About">
+            <section class="nav-info">About</section>
         </li>
-        <li onclick="loadResume()"><img src="assets/icons/grad_hat.png" alt="Graduation Hat">
-            <section class="nav-info slide-in-blurred-right">Resume</section>
+        <li onclick="showResume()">
+            <img src="assets/icons/grad_hat.png" alt="Resume">
+            <section class="nav-info">Resume</section>
         </li>
-        <li onclick="loadPortfolio()"><img src="assets/icons/portfolio.png" alt="Portfolio">
-            <section class="nav-info slide-in-blurred-right">Portfolio</section>
+        <li onclick="showPortfolio()">
+            <img src="assets/icons/portfolio.png" alt="Portfolio">
+            <section class="nav-info">Portfolio</section>
         </li>
-        <li onclick="loadContact()"><img src="assets/icons/contact.png" alt="Contact">
-            <section class="nav-info slide-in-blurred-right">Contact</section>
+        <li onclick="showContact()">
+            <img src="assets/icons/contact.png" alt="Contact">
+            <section class="nav-info">Contact</section>
         </li>
     </ul>
 </nav>
+
 <script src="script.js" type="text/javascript"></script>
 </body>
 </html>

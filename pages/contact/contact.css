@@ -1,39 +1,53 @@
+/* ========================
+   Contact Page
+   ======================== */
+
 .main-im-container {
     display: flex;
     width: 100%;
+    gap: 12px;
 }
 
 .im-container {
     display: flex;
     flex-direction: column;
-    justify-items: center;
     align-items: center;
     border: 2px solid gray;
     background-color: #fcfcfc;
-    margin: 2em;
+    margin: 0.5em;
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
+    transition: box-shadow 250ms ease;
 }
 
-.im-container:hover{
-    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+.im-container:hover {
+    animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    box-shadow:
+        rgba(255, 255, 255, 0.1) 0 1px 1px 0 inset,
+        rgba(50, 50, 93, 0.25) 0 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0 30px 60px -30px;
 }
 
 .im-container img {
-    width: 15%;
-    height: 15%;
+    width: 36px;
+    height: 36px;
     margin: 0.5em;
+}
+
+.im-container h3 {
+    font-size: 0.85em;
+    text-align: center;
 }
 
 .left-im-container {
     width: 40%;
+    flex-shrink: 0;
 }
 
 .left-im-container h1 {
-    margin: 0 50px;
+    margin: 0 0 12px;
+    font-size: 1.4em;
 }
 
 .right-im-container {
@@ -42,17 +56,21 @@
 
 .im-map {
     width: 100%;
-    height: 200px;
-    margin-top: 82px;
+    height: 160px;
+    margin-top: 0;
+    margin-bottom: 12px;
 }
 
 .im-map iframe {
     width: 100%;
-    height: 98%;
+    height: 100%;
+    border-radius: 8px;
+    border: 0;
 }
 
 .contactor {
     display: flex;
+    gap: 10px;
 }
 
 .left-contactor {
@@ -63,59 +81,203 @@
     width: 50%;
 }
 
-input {
-    width: 90%;
-    padding: 12px 0 12px 10px;
-    margin-bottom: 15px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+/* ========================
+   Form Elements (scoped to contact form)
+   ======================== */
+.left-contactor input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     border-radius: 7px;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    outline: none;
+    transition: border-color 200ms ease;
 }
 
-textarea {
+.left-contactor input:focus {
+    border-color: var(--dcol);
+}
+
+.message-contactor textarea {
     border-radius: 7px;
-    padding: 8px;
+    padding: 10px 12px;
     width: 100%;
     height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+    min-height: 120px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    outline: none;
+    resize: vertical;
+    transition: border-color 200ms ease;
+}
+
+.message-contactor textarea:focus {
+    border-color: var(--dcol);
 }
 
 .help-you {
-    margin: 20px 0;
+    margin: 12px 0;
+    font-size: 1.1em;
 }
 
+/* ========================
+   Contact Button
+   ======================== */
 .right-im-container button {
     color: var(--dcol);
     background-color: white;
     border-radius: 25px;
     border: 2px solid var(--dcol);
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
-    padding: 9px 35px;
-    margin-bottom: 20px;
+    padding: 8px 28px;
+    margin-bottom: 16px;
+    transition: color 250ms ease, background-color 250ms ease;
 }
 
 .right-im-container button:hover {
     color: white;
-    background: var(--dcol);
-    transition: 250ms ease;
+    background-color: var(--dcol);
 }
 
+/* ========================
+   Animations
+   ======================== */
 @keyframes slide-in-elliptic-left-fwd {
     0% {
         transform: translateX(-800px) rotateY(30deg) scale(0);
-        -webkit-transform-origin: -100% 50%;
         transform-origin: -100% 50%;
         opacity: 0;
     }
     100% {
         transform: translateX(0) rotateY(0) scale(1);
-        -webkit-transform-origin: 1800px 50%;
         transform-origin: 1800px 50%;
         opacity: 1;
     }
 }
+
 .slide-in-elliptic-left-fwd {
-    -webkit-animation: slide-in-elliptic-left-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-in-elliptic-left-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-elliptic-left-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
+/* ========================
+   RESPONSIVE — Tablet (768px – 1024px)
+   ======================== */
+@media (max-width: 1024px) {
+    .left-im-container h1 {
+        font-size: 1.2em;
+    }
+
+    .im-map {
+        height: 140px;
+    }
+
+    .im-container {
+        margin: 0.3em;
+    }
+
+    .im-container img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .im-container h3 {
+        font-size: 0.75em;
+    }
+}
+
+/* ========================
+   RESPONSIVE — Mobile (≤ 768px)
+   ======================== */
+@media (max-width: 768px) {
+    .main-im-container {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .left-im-container {
+        width: 100%;
+    }
+
+    /* Horizontal scroll row of contact cards on mobile */
+    .left-im-container > .im-container,
+    .left-im-container > div.im-container {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin: 4px 0;
+        padding: 8px 12px;
+    }
+
+    /* Show 2 contact cards per row with a flex-wrap */
+    .left-im-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .left-im-container h1 {
+        width: 100%;
+        font-size: 1.3em;
+        margin: 0 0 8px;
+    }
+
+    .left-im-container .im-container {
+        width: calc(50% - 3px);
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .im-container img {
+        width: 28px;
+        height: 28px;
+        margin: 4px;
+    }
+
+    .im-container h3 {
+        font-size: 0.75em;
+    }
+
+    .right-im-container {
+        width: 100%;
+    }
+
+    .im-map {
+        height: 180px;
+        margin-top: 12px;
+    }
+
+    .contactor {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .left-contactor {
+        width: 100%;
+    }
+
+    .message-contactor {
+        width: 100%;
+    }
+
+    .message-contactor textarea {
+        min-height: 100px;
+        height: 100px;
+    }
+
+    .left-contactor input {
+        margin-bottom: 8px;
+    }
+}
+
+/* ========================
+   RESPONSIVE — Small Mobile (≤ 400px)
+   ======================== */
+@media (max-width: 400px) {
+    .left-im-container .im-container {
+        width: 100%;
+    }
+}
