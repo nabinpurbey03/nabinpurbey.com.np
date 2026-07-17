@@ -601,6 +601,12 @@ footer {
         margin: 0 5px;
     }
 
+    /* Hide the Download CV button in the mobile top bar —
+       it's accessible via the home section CTA instead */
+    .head-container button {
+        display: none;
+    }
+
     button {
         font-size: 13px;
         padding: 6px 18px;
