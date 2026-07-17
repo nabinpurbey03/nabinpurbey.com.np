@@ -5,7 +5,7 @@
     --dcol: #04b4e0;
     --transition-base: 250ms ease;
     --nav-size-desktop: 60px;
-    --nav-bottom-height: 64px;
+    --nav-bottom-height: 72px;
 }
 
 /* ========================
@@ -346,11 +346,10 @@ footer {
 }
 
 .nav-info {
-    display: none;
     position: absolute;
-    left: -85px;
+    left: -96px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(-6px);
     background-color: #4facfe;
     font-weight: bold;
     padding: 5px 10px;
@@ -358,11 +357,18 @@ footer {
     letter-spacing: 2px;
     white-space: nowrap;
     color: white;
-    pointer-events: none; /* tooltip must never intercept clicks */
+    pointer-events: none;
+    /* Animate with opacity instead of display toggling */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
 }
 
-.nav-bar ul li:hover .nav-info {
-    display: block;
+.nav-bar ul li:hover .nav-info,
+.nav-bar ul li:focus .nav-info {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
 }
 
 /* ========================
@@ -379,6 +385,97 @@ footer {
 
 .slide-in-blurred-right {
     animation: slide-in-blurred-right 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* ========================
+   Social Icon Tooltips
+   ======================== */
+.mod-link {
+    position: relative;
+}
+
+.mod-link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.72);
+    color: #fff;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+    z-index: 20;
+}
+
+.mod-link:hover::after {
+    opacity: 1;
+}
+
+/* ========================
+   Nav Label (mobile active indicator)
+   ======================== */
+.nav-label {
+    display: none; /* hidden on desktop */
+}
+
+/* ========================
+   Scroll Progress Bar
+   ======================== */
+#scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--dcol) 0%, #7dd3fc 100%);
+    border-radius: 0 2px 2px 0;
+    z-index: 99999;
+    transition: width 100ms linear;
+    pointer-events: none;
+}
+
+/* ========================
+   Toast Notifications
+   ======================== */
+#toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 99998;
+    pointer-events: none;
+}
+
+.toast {
+    background: #1e293b;
+    color: #f1f5f9;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-size: 0.84em;
+    font-family: "my_poppins", serif;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    max-width: 300px;
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 300ms ease, transform 300ms ease;
+    pointer-events: none;
+    border-left: 4px solid transparent;
+}
+
+.toast-info    { border-left-color: var(--dcol); }
+.toast-success { border-left-color: #22c55e; }
+.toast-error   { border-left-color: #ef4444; }
+
+.toast-visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* ========================
@@ -430,7 +527,7 @@ footer {
     }
 
     .nav-info {
-        left: -80px;
+        left: -86px;
     }
 }
 
@@ -575,9 +672,45 @@ footer {
         height: 26px;
     }
 
-    /* Hide the desktop hover tooltips on mobile */
+    /* Hide desktop tooltips on mobile */
     .nav-info {
-        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Mobile nav labels — show text under active icon */
+    .nav-bar ul li {
+        flex-direction: column;
+        gap: 1px;
+        height: 54px;
+        width: 54px;
+        padding: 5px 4px;
+    }
+
+    .nav-label {
+        display: block;
+        font-size: 9px;
+        line-height: 1;
+        color: #aaa;
+        text-align: center;
+        font-family: "my_poppins", serif;
+        letter-spacing: 0.3px;
+    }
+
+    .active .nav-label {
+        color: var(--dcol);
+        font-weight: 600;
+    }
+
+    /* Social tooltips off on mobile */
+    .mod-link::after {
+        display: none;
+    }
+
+    /* Toast shifts up above bottom nav */
+    #toast-container {
+        bottom: calc(var(--nav-bottom-height) + 12px);
     }
 
     .active {
