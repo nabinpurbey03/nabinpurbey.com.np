@@ -177,7 +177,7 @@ body {
     color: black;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* center caused tall sections to overflow upward and hide the top */
     padding: 60px;
     overflow-y: auto;
 }
