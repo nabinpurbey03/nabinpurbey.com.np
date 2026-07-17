@@ -26,22 +26,22 @@
             <h3>Software Developer</h3>
         </div>
         <div class="related-links">
-            <div class="mod-link">
+            <div class="mod-link" data-tooltip="GitHub">
                 <a href="https://github.com/nabinpurbey03" target="_blank">
                     <img class="link-image" src="assets/icons/github.png" alt="Github">
                 </a>
             </div>
-            <div class="mod-link">
+            <div class="mod-link" data-tooltip="LinkedIn">
                 <a href="https://www.linkedin.com/in/nabin-purbey-55961a230/" target="_blank">
                     <img class="link-image" src="assets/icons/linkedin1.png" alt="Linkedin">
                 </a>
             </div>
-            <div class="mod-link">
+            <div class="mod-link" data-tooltip="Twitter">
                 <a href="#" title="N/A">
                     <img class="link-image" src="assets/icons/twitter1.png" alt="Twitter">
                 </a>
             </div>
-            <div class="mod-link">
+            <div class="mod-link" data-tooltip="Email">
                 <a href="mailto:purbeynabin@gmail.com" target="_blank">
                     <img class="link-image" src="assets/icons/email1.png" alt="Email">
                 </a>
@@ -53,6 +53,8 @@
 
     <!-- Right panel: content sections (show/hide via JS — no fetch needed) -->
     <div class="info-container">
+        <!-- Scroll-position progress bar (JS-driven width) -->
+        <div id="scroll-progress-bar"></div>
 
         <!-- ===== HOME SECTION ===== -->
         <div id="home-section" class="page-section page-section--centered">
@@ -388,11 +390,11 @@
                         <img src="assets/icons/location.png" alt="Location">
                         <h3>Kathmandu</h3>
                     </div>
-                    <div class="im-container">
+                    <div class="im-container" data-copy="980-766-9620" data-copy-label="Phone" title="Click to copy">
                         <img src="assets/icons/phone.png" alt="Phone">
                         <h3>980-766-9620</h3>
                     </div>
-                    <div class="im-container">
+                    <div class="im-container" data-copy="nabinbim21@oic.edu.np" data-copy-label="Email" title="Click to copy">
                         <img src="assets/icons/mail.png" alt="Email">
                         <h3>nabinbim21@oic.edu.np</h3>
                     </div>
@@ -429,30 +431,38 @@
     </div><!-- /.info-container -->
 </div><!-- /.main-div -->
 
-<nav class="nav-bar">
+<nav class="nav-bar" role="navigation" aria-label="Main navigation">
     <ul>
-        <li onclick="showHome()" class="active nav-link">
-            <img src="assets/icons/home1.png" alt="Home">
+        <li onclick="showHome()" class="active nav-link" tabindex="0" role="button" aria-label="Home">
+            <img src="assets/icons/home1.png" alt="">
             <section class="nav-info">Home</section>
+            <span class="nav-label">Home</span>
         </li>
-        <li onclick="showAbout()">
-            <img src="assets/icons/about.png" alt="About">
+        <li onclick="showAbout()" tabindex="0" role="button" aria-label="About">
+            <img src="assets/icons/about.png" alt="">
             <section class="nav-info">About</section>
+            <span class="nav-label">About</span>
         </li>
-        <li onclick="showResume()">
-            <img src="assets/icons/grad_hat.png" alt="Resume">
+        <li onclick="showResume()" tabindex="0" role="button" aria-label="Resume">
+            <img src="assets/icons/grad_hat.png" alt="">
             <section class="nav-info">Resume</section>
+            <span class="nav-label">Resume</span>
         </li>
-        <li onclick="showPortfolio()">
-            <img src="assets/icons/portfolio.png" alt="Portfolio">
+        <li onclick="showPortfolio()" tabindex="0" role="button" aria-label="Portfolio">
+            <img src="assets/icons/portfolio.png" alt="">
             <section class="nav-info">Portfolio</section>
+            <span class="nav-label">Work</span>
         </li>
-        <li onclick="showContact()">
-            <img src="assets/icons/contact.png" alt="Contact">
+        <li onclick="showContact()" tabindex="0" role="button" aria-label="Contact">
+            <img src="assets/icons/contact.png" alt="">
             <section class="nav-info">Contact</section>
+            <span class="nav-label">Contact</span>
         </li>
     </ul>
 </nav>
+
+<!-- Toast notification container -->
+<div id="toast-container" role="status" aria-live="polite"></div>
 
 <script src="script.js" type="text/javascript"></script>
 </body>
