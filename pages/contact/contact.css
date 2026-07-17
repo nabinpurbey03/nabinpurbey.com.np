@@ -100,6 +100,35 @@
     border-color: var(--dcol);
 }
 
+/* ========================
+   Form Validation Error State
+   ======================== */
+@keyframes input-shake {
+    0%, 100% { transform: translateX(0); }
+    20%       { transform: translateX(-5px); }
+    40%       { transform: translateX(5px); }
+    60%       { transform: translateX(-4px); }
+    80%       { transform: translateX(4px); }
+}
+
+.input-error {
+    border-color: #ef4444 !important;
+    animation: input-shake 0.35s ease both;
+}
+
+/* ========================
+   Click-to-Copy Card Hint
+   ======================== */
+.im-container[data-copy] {
+    cursor: copy;
+    user-select: none;
+    transition: box-shadow 250ms ease, transform 200ms ease;
+}
+
+.im-container[data-copy]:active {
+    transform: scale(0.96);
+}
+
 .message-contactor textarea {
     border-radius: 7px;
     padding: 10px 12px;
