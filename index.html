@@ -58,12 +58,36 @@
 
         <!-- ===== HOME SECTION ===== -->
         <div id="home-section" class="page-section page-section--centered">
-            <div class="author-details">
-                <h1 class="common head-name tracking-in-expand-fwd">Nabin Purbey</h1>
-                <h4 class="common shade">Full Stack Web Developer</h4>
-                <h4 class="common shade">DevOps Engineer</h4>
-                <h4 class="common shade">Data Analyst</h4>
+
+            <!-- Floating code symbols (pure CSS animated, decorative) -->
+            <div class="home-symbols" aria-hidden="true">
+                <span class="sym">&lt;/&gt;</span>
+                <span class="sym">{}</span>
+                <span class="sym">//</span>
+                <span class="sym">=&gt;</span>
+                <span class="sym">fn()</span>
+                <span class="sym">[ ]</span>
+                <span class="sym">&amp;&amp;</span>
+                <span class="sym">01</span>
+                <span class="sym">::</span>
+                <span class="sym">const</span>
+                <span class="sym">var</span>
+                <span class="sym">&lt;&gt;</span>
             </div>
+
+            <div class="home-content">
+                <p class="home-greeting">Hello, I'm</p>
+                <h1 class="home-name tracking-in-expand-fwd">Nabin Purbey</h1>
+                <div class="home-role-wrapper">
+                    <span class="home-role-prefix">I'm a </span><span id="home-typewriter" class="home-typewriter"></span><span class="home-cursor">|</span>
+                </div>
+                <div class="home-divider"></div>
+                <div class="home-cta">
+                    <button class="btn-cta-primary" onclick="showPortfolio()">View My Work &rarr;</button>
+                    <button class="btn-cta-outline" onclick="window.open('downloadable/resume-download.html','_blank')">Download CV</button>
+                </div>
+            </div>
+
         </div>
 
         <!-- ===== ABOUT SECTION ===== -->
