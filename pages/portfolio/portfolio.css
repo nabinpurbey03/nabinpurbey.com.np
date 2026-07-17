@@ -95,6 +95,8 @@
     border-radius: 15px;
     overflow: hidden;
     margin: 0;
+    position: relative; /* needed for ::after overlay */
+    cursor: pointer;
 }
 
 .contents div img {
@@ -115,8 +117,34 @@
     padding: 0 4px;
 }
 
+/* Project card overlay */
+.contents div::after {
+    content: "\2197  View Project";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20%; /* match the 80% image height */
+    background: rgba(4, 180, 224, 0.82);
+    color: #fff;
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 15px 0 0;
+    opacity: 0;
+    transition: opacity 220ms ease;
+    pointer-events: none;
+}
+
+.contents div:hover::after {
+    opacity: 1;
+}
+
 .contents div img:hover {
-    transform: scale(1.08);
+    transform: scale(1.06);
     cursor: pointer;
 }
 
