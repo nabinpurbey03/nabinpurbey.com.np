@@ -197,6 +197,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative; /* required for .home-symbols absolute layer */
 }
 
 /* ========================
@@ -744,4 +745,205 @@ footer {
     .info-container {
         padding: 16px 12px;
     }
+}
+
+/* ============================================================
+   HOME HERO — full redesign
+   ============================================================ */
+
+/* Make the home section fill the panel so symbols use full height */
+#home-section {
+    overflow: hidden;
+    min-height: calc(90vh - 120px); /* card height - 2 × 60px padding */
+}
+
+/* ========================
+   Floating code symbols
+   ======================== */
+.home-symbols {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.sym {
+    position: absolute;
+    font-family: "Courier New", monospace;
+    color: var(--dcol);
+    opacity: 0;
+    font-size: 13px;
+    bottom: -40px;
+    user-select: none;
+    animation: sym-float linear infinite;
+}
+
+@keyframes sym-float {
+    0%   { transform: translateY(0) rotate(0deg);       opacity: 0; }
+    8%   { opacity: 0.08; }
+    92%  { opacity: 0.08; }
+    100% { transform: translateY(-110vh) rotate(18deg); opacity: 0; }
+}
+
+.sym:nth-child(1)  { left:  4%; animation-duration:  9s; animation-delay:  0s;   font-size: 12px; }
+.sym:nth-child(2)  { left: 14%; animation-duration: 13s; animation-delay:  2.1s; font-size: 16px; }
+.sym:nth-child(3)  { left: 22%; animation-duration: 11s; animation-delay:  4.3s; }
+.sym:nth-child(4)  { left: 33%; animation-duration: 10s; animation-delay:  0.8s; font-size: 11px; }
+.sym:nth-child(5)  { left: 43%; animation-duration: 12s; animation-delay:  3.2s; }
+.sym:nth-child(6)  { left: 54%; animation-duration:  8s; animation-delay:  5.1s; font-size: 14px; }
+.sym:nth-child(7)  { left: 63%; animation-duration: 15s; animation-delay:  0.3s; }
+.sym:nth-child(8)  { left: 72%; animation-duration: 10s; animation-delay:  2.7s; font-size: 15px; }
+.sym:nth-child(9)  { left: 82%; animation-duration: 13s; animation-delay:  4.6s; }
+.sym:nth-child(10) { left:  9%; animation-duration: 11s; animation-delay:  6.2s; font-size: 11px; }
+.sym:nth-child(11) { left: 49%; animation-duration: 14s; animation-delay:  1.5s; }
+.sym:nth-child(12) { left: 91%; animation-duration:  9s; animation-delay:  7.3s; font-size: 12px; }
+
+/* ========================
+   Home content wrapper
+   ======================== */
+.home-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* "Hello, I'm" sub-label */
+.home-greeting {
+    font-size: 0.82em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin: 0 0 6px;
+    font-weight: 400;
+}
+
+/* Gradient name */
+.home-name {
+    margin: 0 0 12px;
+    padding: 0;
+    font-size: 3.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #04b4e0 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Typewriter line */
+.home-role-wrapper {
+    font-size: 1.15em;
+    color: #475569;
+    min-height: 1.8em;
+    margin-bottom: 4px;
+}
+
+.home-role-prefix { color: #94a3b8; }
+
+.home-typewriter {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.home-cursor {
+    color: var(--dcol);
+    font-weight: 300;
+    animation: blink-cursor 0.72s step-end infinite;
+}
+
+@keyframes blink-cursor {
+    from, to { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* Gradient divider */
+.home-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #04b4e0, #7c3aed);
+    border-radius: 2px;
+    margin: 22px auto;
+}
+
+/* ========================
+   Home CTA buttons
+   ======================== */
+.home-cta {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta-primary {
+    background: linear-gradient(135deg, #04b4e0, #0582ca);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(4, 180, 224, 0.38);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    letter-spacing: 0.4px;
+    font-family: "my_poppins", serif;
+}
+
+.btn-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(4, 180, 224, 0.52);
+    color: white;
+    background: linear-gradient(135deg, #04b4e0, #0582ca);
+}
+
+.btn-cta-outline {
+    background: transparent;
+    color: var(--dcol);
+    border: 2px solid var(--dcol);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 200ms ease, color 200ms ease, box-shadow 200ms ease;
+    letter-spacing: 0.4px;
+    font-family: "my_poppins", serif;
+    box-shadow: none;
+}
+
+.btn-cta-outline:hover {
+    background: var(--dcol);
+    color: white;
+    box-shadow: 0 4px 18px rgba(4, 180, 224, 0.38);
+}
+
+/* ========================
+   Home Hero — Responsive
+   ======================== */
+@media (max-width: 1024px) {
+    #home-section  { min-height: calc(92vh - 60px); }
+    .home-name     { font-size: 3em; }
+}
+
+@media (max-width: 768px) {
+    #home-section {
+        min-height: calc(100dvh - var(--nav-bottom-height) - 90px);
+    }
+    .home-name         { font-size: 2.2em; }
+    .home-role-wrapper { font-size: 0.95em; }
+    .home-greeting     { font-size: 0.72em; letter-spacing: 3px; }
+    .btn-cta-primary,
+    .btn-cta-outline   { padding: 10px 22px; font-size: 0.82em; }
+    .home-divider      { margin: 16px auto; }
+}
+
+@media (max-width: 400px) {
+    .home-name { font-size: 1.9em; }
+    .home-cta  { gap: 10px; }
 }
