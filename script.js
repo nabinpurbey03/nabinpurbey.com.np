@@ -258,3 +258,48 @@ function showToast(message, type = "info", duration = 3000) {
         }, 1200);
     }
 })();
+
+/* ========================
+   Home Section: Typewriter Effect
+   ======================== */
+(function initTypewriter() {
+    const el = document.getElementById("home-typewriter");
+    if (!el) return;
+
+    const roles = [
+        "Full Stack Web Developer",
+        "DevOps Engineer",
+        "Data Analyst"
+    ];
+
+    let roleIdx  = 0;
+    let charIdx  = 0;
+    let deleting = false;
+
+    function tick() {
+        const word = roles[roleIdx];
+
+        if (deleting) {
+            el.textContent = word.slice(0, charIdx - 1);
+            charIdx--;
+        } else {
+            el.textContent = word.slice(0, charIdx + 1);
+            charIdx++;
+        }
+
+        let delay = deleting ? 45 : 75;
+
+        if (!deleting && charIdx === word.length) {
+            delay    = 2000;     // pause at full word before erasing
+            deleting = true;
+        } else if (deleting && charIdx === 0) {
+            deleting = false;
+            roleIdx  = (roleIdx + 1) % roles.length;
+            delay    = 350;      // brief pause before typing next role
+        }
+
+        setTimeout(tick, delay);
+    }
+
+    tick();
+})();
