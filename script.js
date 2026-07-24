@@ -263,18 +263,28 @@ function showToast(message, type = "info", duration = 3000) {
    Home Section: Typewriter Effect
    ======================== */
 (function initTypewriter() {
-    const el = document.getElementById("home-typewriter");
+    const el      = document.getElementById("home-typewriter");
+    const article = document.getElementById("home-article");
     if (!el) return;
 
     const roles = [
+        "AI Engineer",
         "Full Stack Web Developer",
         "DevOps Engineer",
         "Data Analyst"
     ];
 
+    // Returns "an " for vowel-starting words, "a " otherwise
+    function getArticle(word) {
+        return /^[aeiou]/i.test(word) ? "an " : "a ";
+    }
+
     let roleIdx  = 0;
     let charIdx  = 0;
     let deleting = false;
+
+    // Set article immediately for the first role
+    if (article) article.textContent = getArticle(roles[0]);
 
     function tick() {
         const word = roles[roleIdx];
@@ -295,6 +305,8 @@ function showToast(message, type = "info", duration = 3000) {
         } else if (deleting && charIdx === 0) {
             deleting = false;
             roleIdx  = (roleIdx + 1) % roles.length;
+            // Update article for the incoming role
+            if (article) article.textContent = getArticle(roles[roleIdx]);
             delay    = 350;      // brief pause before typing next role
         }
 
