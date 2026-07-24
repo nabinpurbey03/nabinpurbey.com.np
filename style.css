@@ -301,8 +301,8 @@ footer {
    Social / Mod Links
    ======================== */
 .mod-link {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     margin: 0 10px;
 }
 
@@ -561,43 +561,59 @@ footer {
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        gap: 12px;
-        padding: 10px 16px;
+        gap: 14px;
+        padding: 10px 18px;
         background-color: var(--dcol);
         flex-shrink: 0;
+        min-height: 72px;
     }
 
     .image-container {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         border-width: 2px;
         flex-shrink: 0;
     }
 
-    /* Hide author name text + social links in mobile top bar to save space */
+    /* Author name block: stack name + subtitle */
     .head-container .author-details {
         align-items: flex-start;
+        flex: 1 1 0;
+        min-width: 0;
     }
 
     .head-container .author-details h1 {
         font-size: 1em;
         letter-spacing: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .head-container .author-details h3 {
-        font-size: 0.7em;
+        font-size: 0.68em;
         font-weight: 400;
+        opacity: 0.85;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
+    /* Push social icons to the trailing (right) edge */
     .related-links {
         margin: 0;
+        margin-left: auto;
         width: auto;
         gap: 0;
+        flex-shrink: 0;
+        /* subtle left separator */
+        padding-left: 12px;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .mod-link {
-        width: 28px;
-        height: 28px;
+        width: 34px;
+        height: 34px;
         margin: 0 5px;
     }
 
@@ -729,23 +745,33 @@ footer {
    RESPONSIVE — Small Mobile (≤ 400px)
    ======================== */
 @media (max-width: 400px) {
+    .head-container {
+        padding: 8px 12px;
+        gap: 10px;
+        min-height: 64px;
+    }
+
     .head-container .author-details h1 {
-        font-size: 0.9em;
+        font-size: 0.88em;
     }
 
     .head-container .author-details h3 {
-        font-size: 0.65em;
+        font-size: 0.62em;
     }
 
     .mod-link {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         margin: 0 3px;
     }
 
     .image-container {
-        width: 50px;
-        height: 50px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .related-links {
+        padding-left: 8px;
     }
 
     .info-container {
